@@ -1,0 +1,126 @@
+.cms {
+  padding: 82px 0 110px;
+}
+
+.header {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  padding-bottom: 7px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #c6c2de;
+}
+
+.header__name {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6e6893;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.filter {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter__button {
+  padding: 9px 10px 10px 39px;
+  background-image: url("/img/filter.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  width: 108px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  border: 1px solid #c6c2de;
+  border-radius: 6px;
+  color: #25213b;
+}
+
+.form__search {
+  padding: 13px 40px 12px;
+  width: 392px;
+  background-image: url("/img/search.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #6e6893;
+  background-color: #f4f2ff;
+  border: none;
+}
+
+.filter__add-product {
+  padding: 10px 16px;
+}
+
+.table {
+  min-width: 1100px;
+
+}
+
+.table__row_header {
+  background-color: #f4f2ff;
+}
+
+.table__header {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #6e6893;
+}
+
+.table__body {
+  background-color: var(--white);
+}
+
+.table__cell {
+  padding: 13px 15px;
+  height: 60px;
+}
+
+.table__cell {
+  text-transform: none;
+  border-bottom: 1px solid #d9d5ec;
+  color: #25213b;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.table__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table__show, .table__count {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #6e6893;
+}
