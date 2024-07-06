@@ -1,33 +1,19 @@
 'use strict';
 // Вторая задача:
 
-// Функция принимает число и возвращает true, если число является простым, а в ином случае false.
+const isPrime = number => {
 
-const isPrime = (num) => {
-
-  let takeNumber = Number(num);
-  let resultStr = '';
-
-  for (let i = 0; i < takeNumber.length; i++) {
-    
-    if (takeNumber % 1 === takeNumber % takeNumber) {
-      resultStr = takeNumber
-      return true;
+  let result;
+  
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      result = 'Число не простое';
+      return result;
     } else {
-      return false;
-    }
-    return true;
-  }
+      result = 'Число простое';
+      return result;
+    };
+  };
 };
 
-console.log(isPrime(5));
-
-
-
-// Простое число - целое положительное число, имеющее ровно два различных натуральных делителя - единицу и самого себя.
-
-// Например, 5 - простое число, так как делится без остатка только на 1 и на себя.
-
-// 151, 911, 1987 - так же простые числа
-
-// Используйте цикл for в функции
+console.log(isPrime(72));
