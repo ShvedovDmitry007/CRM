@@ -1,28 +1,34 @@
 'use strict';
 
-const amountOfElements = 5;
-const minRange = 2;
-const maxRange = 10;
-const line = 'odd';
-
 const randomArrayLine = (quantity, min, max, parity) => {
-  const random = [];
 
-  for (let i = 0; i < quantity; i++) {
+  const newArray = [...Array(quantity)].fill().map(() => Math.floor(Math.random() * (max - min + 1)) + min);
 
-    if (parity === 'even') {
-      random.push(Math.floor((Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + Math.ceil(min)) * 2);
-    } else {
-      random.push(Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min))) * 2 + 1);
-    }
-  };
+  newArray.sort((a, b) => {
+    return a - b;
+  });
 
-  return random;
+  if (parity === "even") {
+    const evenArray = newArray.filter(function (num) {
+        return num % 2 === 0 || num === 0;
+    })
+
+    const uniqEven = [...new Set(evenArray)]
+    console.log(`Четные уникальные числа`+ ' ' + uniqEven);
+    return evenArray;
+    
+  } else if (parity === "odd") {
+
+    const oddArray = newArray.filter(function (num) {
+        return num % 2 === 1;
+    })
+    
+    const uniqOdd = [...new Set(oddArray)]
+    console.log(`НЕЧетные уникальные числа`+ ' ' + uniqOdd);
+    return oddArray;
+  }
+
 };
 
-const lineResult = randomArrayLine(amountOfElements, minRange, maxRange, line);
-console.log(`Задача 3. Массив случайных чисел в диапазоне от ${minRange} до ${maxRange}:`, lineResult);
-
-
-// если функция получает 'even', то функция возвращает массив чётных чисел
-// если функция получает 'odd', то функция возвращает массив нечётных чисел
+console.log( ` Все Четные Числа:` + ' ' +randomArrayLine(20, 40, 1, "even"));
+console.log( ` Все НЕЧетные Числа:` + ' ' +randomArrayLine(20, 40, 1, "odd"));

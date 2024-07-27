@@ -1,43 +1,37 @@
 'use strict';
 
-// Создайте файл game01.js
-
-// Написать простой игровой бот "Угадай число", который умеет следующее:
-
 const guessTheNumber = () => {
-  const botRandomNumber = Math.floor(Math.random() * 100); //Загадывает число от 1 до 100;
-  console.log(botRandomNumber);
+  let gameOver = false;
+  const number = Math.floor(Math.random() * 100) + 1;
 
-  const userNumber = +prompt('Введите число: ');
-  console.log(userNumber);
+  while (!gameOver) {
+    /*получаем ответ юзера*/
+    let answer = +prompt("Я загадал число от 1 до 100, угадывайте");
 
-  if (userNumber === null) {
-    alert('Игра закончена!');
+    /*простая проверка на число*/
+    if (Number.isNaN(answer)) {
+      alert("Введи число!");
+    }
+
+    /*выход или ноль*/
+    if (answer === 0) {
+      alert("Ну как хотите")
+      break;
+    }
+
+    if (answer > number) {
+      alert("Меньше!")
+    }
+
+    if (answer < number) {
+      alert("Больше!")
+    }
+
+    if (answer === number) {
+      alert("Правильно!")
+      gameOver = true;
+    }
   }
-
-
-  if (userNumber > botRandomNumber) {
-    alert('Меньше!');
-  } else if (userNumber < botRandomNumber) {
-    alert('Больше!');
-  } else if (userNumber === botRandomNumber) {
-    alert('Правильно!');
-  } else if (userNumber === null) {
-    alert('Игра закончена!');
-  }
-
-  return;
 };
 
 guessTheNumber();
-
-
-
-
-// Загадывает число от 1 до 100;
-// предлагает пользователю ввести свой вариант отгадки;
-// если пользовательское число больше, чем загаданное, то бот выводит “Меньше!” и предлагает ввести новый вариант;
-// если пользовательское число меньше, чем загаданное, то бот выводит “Больше!” и предлагает ввести новый вариант;
-// если пользователь вводит правильное число, то бот выводит “Правильно!”;
-// если пользователь ввел не число, то выводит “Введи число!”;
-// если пользователь нажимает “Отмена”, то игра заканчивается.
