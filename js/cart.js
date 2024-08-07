@@ -58,11 +58,3 @@ cart.add("Яндекс Станция", 300, 3);
 cart.add("Кофемашина", 800, 1);
 
 cart.print();
-
-
-// Задача 2 
-// задача: написать функцию, которая будет возвращать число равное количеству уникальных ip-адресов
-
-function getNumberOfUniqueIPs(ipAddresses) {
-  return [...new Set(ipAddresses)].length;
-}
